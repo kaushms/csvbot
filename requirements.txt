@@ -1,16 +1,12 @@
 openai
 langchain
 tiktoken
-PyPDF2
-qdrant_client
-PyCryptodome
 streamlit
 htmlTemplate
 InstructorEmbedding
 sentence-transformers
 faiss-cpu
 python-dotenv
-firebase_admin
-st-paywall
 langchain_groq
 langchain_experimental
+langchain_community
