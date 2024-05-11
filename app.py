@@ -4,6 +4,36 @@ from dotenv import load_dotenv
 import streamlit as st
 import os
 
+
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤️ by <a style='display: block; text-align: center;' href="https://www.youtube.com/@thinkmetrics/videos" target="_blank"> Thinkmetrics </a>
+<a> Email: thinkmetrics@gmail.com </a></p>
+</div>
+"""
+
 def main():
     load_dotenv()
     llm = ChatGroq(model=os.getenv("GROQ_Model"), temperature=0,groq_api_key=os.getenv("GROQ_API_KEY"))
@@ -25,7 +55,7 @@ def main():
     if csv_file is not None:
 
         agent = create_csv_agent(
-             llm, csv_file, verbose=True)
+             llm, csv_file)
 
         user_question = st.text_input("Ask a question about your CSV: ")
 
